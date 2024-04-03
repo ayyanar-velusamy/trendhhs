@@ -506,3 +506,80 @@ footer p {
 .header-profile-wrapper .dropdown-toggle::after {
   content: none;
 }
+
+.header-profile-wrapper .dropdown-menu a {
+  color: #212529 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent;
+  font-size: 14px;
+}
+
+form .form-wrapper .field-wrapper .select-control,
+form .form-wrapper .field-wrapper textarea,
+form .form-wrapper .field-wrapper input {
+  background-color: transparent;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 14px;
+  height: unset;
+  color: #000;
+}
+
+.modal-dialog {
+  max-width: 720px !important;
+}
+
+.modal-header, .modal-body {
+  padding: 0 !important;
+}
+
+.modal-header {
+  border-bottom: 0px solid !important;
+  padding-bottom: 45px !important;
+}
+
+
+.modal-header .modal-title {
+  font-size: 25px;
+}
+
+.modal-content {
+  background-color: #F7F9FC !important;
+  padding: 40px 100px;
+}
+
+
+.cta_wrapper {
+  margin-top: 60px;
+}
+
+.cta_wrapper button {
+    padding: 16px;
+    box-shadow: unset;
+    width: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    border: 1px solid transparent;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.cta_wrapper button.success:hover {
+  background-color: transparent;
+  color: #0cd0a2;
+  border: 1px solid #0cd0a2;
+}
+
+.cta_wrapper button.danger {
+  background-color: transparent;
+  color: #ff0a38;
+  border: 1px solid #ff0a38;
+}
+
+.cta_wrapper button.danger:hover {
+  color: #fff;
+  background-color: #ff0a38;
+}
+

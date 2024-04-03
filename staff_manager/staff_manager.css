@@ -301,6 +301,7 @@
   font-size: 12px;
   color: #5e63f2;
   padding-left: 8px;
+  cursor: pointer;
 }
 
 .table-wrapper .table-dropdown-heading-data {
@@ -470,4 +471,17 @@ table tbody tr td input[type="text"] {
   color: #fff !important;
   border-radius: 4px;
   border: 1px solid transparent;
+}
+
+/* popup */
+
+.form-wrapper >*+* {
+  margin-top: 16px;
+}
+
+.form-wrapper .field-wrapper label {
+  color: #666666;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 8px;
 }
