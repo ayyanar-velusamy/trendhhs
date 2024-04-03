@@ -502,6 +502,10 @@ form .form-wrapper .field-wrapper textarea {
   background-color: #ff0a38;
 }
 
+.demographics_head {
+	padding : 15px
+}
+
 /* .cta_wrapper > * + * { */
   /* margin-left: 45px; */
 /* } */

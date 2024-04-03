@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+   <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../staff_manager/staff_manager.css" rel="stylesheet" />
     <link href="../global.css" rel="stylesheet" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,6 +28,11 @@
     ></script>
   </head>
   <body>
+  <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
     <main>
       <div class="container-fluid">
         <!-- Sidebar -->
@@ -181,7 +189,7 @@
                 </div>
                 <div class="add-staff-field d-flex align-items-center">
                   <i class="icon icon-plus"></i>
-                  <p>Add Prospect Manager</p>
+                  <p data-toggle="modal" data-target="#myModal">Add Prospect Manager</p>
                 </div>
               </div>
             </div>
@@ -662,6 +670,94 @@
           </section>
         </div>
       </div>
+	  
+	   <!-- Modal -->
+      <div
+        class="modal fade"
+        id="myModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                Add staff manager
+              </h5>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-wrapper">
+                  <div class="field-wrapper">
+                    <label for="fname">First name</label>
+                    <input
+                      type="text"
+                      id="fname"
+                      value=""
+                      placeholder="First name"
+                    />
+                  </div>
+                  <div class="field-wrapper">
+                    <label for="mname">Last name</label>
+                    <input
+                      type="text"
+                      id="lname"
+                      value=""
+                      placeholder="Last name"
+                    />
+                  </div>
+                  <div class="field-wrapper">
+                    <label for="mname">Email</label>
+                    <input
+                      type="email"
+                      id="lname"
+                      value=""
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div class="field-wrapper">
+                    <label for="fname">Birth date</label>
+                    <div id="dob" class="date" data-date-format="dd/mm/yyyy">
+                      <input type="text" readonly placeholder="DOB" />
+                      <span class="input-group-addon d-none">
+                        <i class="icon icon-eye"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="field-wrapper">
+                    <label for="mname">Position :</label>
+                    <select class="select-control">
+                      <option>Position</option>
+                      <option>Admin</option>
+                      <option>Others</option>
+                    </select>
+                  </div>
+                  <div class="field-wrapper">
+                    <label for="fname">Submit date</label>
+                    <div
+                      id="submit_date"
+                      class="date"
+                      data-date-format="dd/mm/yyyy"
+                    >
+                      <input type="text" readonly placeholder="Submit date" />
+                      <span class="input-group-addon d-none">
+                        <i class="icon icon-eye"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="cta_wrapper d-flex justify-content-center gap-5">
+              <button class="danger">Clear</button>
+              <button class="success">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+	  
     </main>
     <!--Main layout-->
   </body>
