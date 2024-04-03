@@ -372,9 +372,9 @@ table tbody tr td {
 }
 
 table tbody tr td a {
-  position: absolute;
-  right: 16px;
-  top: 12px;
+  /* position: absolute; */
+  /* right: 16px; */
+  /* top: 12px; */
   border-bottom: unset;
 }
 

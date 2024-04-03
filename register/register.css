@@ -23,7 +23,7 @@
 
 @media screen and (max-width: 1600px) {
   .register-page-wrapper {
-    padding-top: 50px;
+    padding-top: 30px;
   }
 }
 
@@ -33,8 +33,8 @@
 }
 
 .form-wrapper .title-wrapper {
-  margin-top: 20px;
-  margin-bottom: 14px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .register-page-wrapper.login .form-wrapper .title-wrapper h1 {
@@ -42,7 +42,7 @@
 }
 
 .register-page-wrapper .form-wrapper .title-wrapper h1 {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .form-wrapper .title-wrapper p {
@@ -50,12 +50,12 @@
 }
 
 .form-wrapper .logo-img {
-  height: 90px;
+  height: 83px;
 }
 
 .checkbox-wrapper label {
   font-size: 12px;
-  margin-left: 8px;
+  margin-left: 0px;
 }
 
 @media all and (max-width: 1199.98px) {
@@ -93,7 +93,7 @@
 }
 
 .form-wrapper .form-field-wrapper > * + * {
-  margin-top: 14px !important;
+  margin-top: 12px !important;
 }
 
 .form-wrapper .form-field-wrapper .select-wrapper::after {
