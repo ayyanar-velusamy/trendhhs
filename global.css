@@ -460,6 +460,18 @@ button:focus {
   padding-bottom: 10px;
 }
 
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active.active {
+  background-image: unset;
+  background-color: #0cd0a2 !important;
+}
+
+.datepicker table tr td.today {
+  background-image: unset !important;
+  background-color: #373ccb !important;
+  color: white !important;
+}
+
 /* Footer Start */
 footer {
   padding-top: 40px;

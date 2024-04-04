@@ -25,7 +25,7 @@
     ></script>
   </head>
   <body>
-    <div class="main">
+    <div class="main login-page">
       <section class="register-page-wrapper login">
         <div class="container">
           <div class="register-page-parent">
@@ -83,12 +83,16 @@
               </div>
             </div>
             <div class="form-wrapper">
-              <img src="../images/logo.svg" class="logo-img"/>
+              <img src="../images/logo.svg" class="logo-img" />
               <div class="title-wrapper">
                 <h1>Login</h1>
                 <div class="small-bar"></div>
               </div>
-              <form class="form-field-wrapper" method="get" action="../staff_manager/staff_manager.html">
+              <form
+                class="form-field-wrapper"
+                method="get"
+                action="../staff_manager/staff_manager.html"
+              >
                 <input type="text" name="username" placeholder="Username" />
                 <div class="password-wrapper position-relative">
                   <input
@@ -100,16 +104,20 @@
                 <div
                   class="forgot-password-wrapper d-flex align-items-center justify-content-between"
                 >
-                  <div class="checkbox-wrapper">
+                  <div class="checkbox-tick-wrapper d-flex align-items-center">
                     <label class="d-flex align-items-center">
                       <input type="checkbox" value="" />
-                      <span class="cr"><span></span></span>
+                      <span class="cr"
+                        ><i class="icon icon-tick-white"></i
+                      ></span>
                       <p>Remember</p>
                     </label>
                   </div>
                   <a href="#">Forgot password?</a>
                 </div>
-                <button>Login</button>
+                <div class="btn-wrap">
+                  <button>Register</button>
+                </div>
               </form>
             </div>
           </div>

@@ -92,6 +92,11 @@
   margin-top: 22px;
 }
 
+.register-page-wrapper .form-wrapper .form-field-wrapper .btn-wrap {
+  width: 50% !important;
+  margin: 0 auto;
+}
+
 .form-wrapper .form-field-wrapper > * + * {
   margin-top: 12px !important;
 }
@@ -127,4 +132,9 @@
 
 .register-page-wrapper.login .forgot-password-wrapper a:hover {
   border-bottom: 1px solid;
+}
+
+.login-page footer {
+  padding-bottom: 0;
+  padding-top: 75px;
 }
