@@ -101,7 +101,7 @@
   margin-top: 12px !important;
 }
 
-.form-wrapper .form-field-wrapper .select-wrapper::after {
+/* .form-wrapper .form-field-wrapper .select-wrapper::after {
   content: "";
   position: absolute;
   background-image: url("data:image/svg+xml,%0A%3Csvg width='15' height='7' viewBox='0 0 15 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 1L7.5 6L13.5 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
@@ -111,7 +111,7 @@
   top: 20px;
   right: 18px;
 
-}
+} */
 
 /* forgot-password section */
 .register-page-wrapper.login .forgot-password-wrapper {
