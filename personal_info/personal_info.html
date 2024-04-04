@@ -54,6 +54,50 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script>
+      function positionToggleDropdown() {
+        var positionDropdown = document.getElementById("positionDropdown");
+        if (positionDropdown.style.display === "block") {
+          positionDropdown.style.display = "none";
+        } else {
+          positionDropdown.style.display = "block";
+        }
+      }
+
+      function positionSelectOption(option) {
+        document.querySelector(".selected-option-position").textContent =
+          option;
+        document.getElementById("positionDropdown").style.display = "none";
+      }
+
+      function genderToggleDropdown() {
+        var genderDropdown = document.getElementById("genderDropdown");
+        if (genderDropdown.style.display === "block") {
+          genderDropdown.style.display = "none";
+        } else {
+          genderDropdown.style.display = "block";
+        }
+      }
+
+      function genderSelectOption(option) {
+        document.querySelector(".selected-option-gender").textContent = option;
+        document.getElementById("genderDropdown").style.display = "none";
+      }
+
+      function toggleDropdown() {
+        var dropdownContent = document.getElementById("dropdownContent");
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      }
+
+      function selectOption(option) {
+        document.querySelector(".selected-option-lang").textContent = option;
+        document.getElementById("dropdownContent").style.display = "none";
+      }
+    </script>
     <main>
       <div class="container-fluid">
         <!-- Sidebar -->
@@ -64,12 +108,12 @@
                 <i class="icon icon-logo"></i><span></span>
               </a>
               <!-- <a href="#" class="active" aria-current="true"> -->
-                <!-- <i class="icon icon-staffs-logo"></i> -->
-                <!-- <p>Staff Manager</p> -->
+              <!-- <i class="icon icon-staffs-logo"></i> -->
+              <!-- <p>Staff Manager</p> -->
               <!-- </a> -->
               <!-- <a href="#" class="" aria-current="true"> -->
-                <!-- <i class="icon icon-prospects-logo"></i> -->
-                <!-- <p>Prospect Manager</p> -->
+              <!-- <i class="icon icon-prospects-logo"></i> -->
+              <!-- <p>Prospect Manager</p> -->
               <!-- </a> -->
             </div>
           </nav>
@@ -121,28 +165,30 @@
               </div>
               <div class="dashboard-tabs-wrapper d-flex justify-content-end">
                 <!-- <div class="dashboard-tabs"> -->
-                  <!-- <i class="icon icon-teams"></i> -->
-                  <!-- <p class="mt-1">HR management</p> -->
+                <!-- <i class="icon icon-teams"></i> -->
+                <!-- <p class="mt-1">HR management</p> -->
                 <!-- </div> -->
                 <!-- <div class="dashboard-tabs green"> -->
-                  <!-- <i class="icon icon-settings"></i> -->
+                <!-- <i class="icon icon-settings"></i> -->
 
-                  <!-- <p class="mt-1">System application</p> -->
+                <!-- <p class="mt-1">System application</p> -->
                 <!-- </div> -->
                 <!-- <div class="dashboard-tabs yellow"> -->
-                  <!-- <i class="icon icon-file-logo"></i> -->
-                  <!-- <p class="mt-1">EHR</p> -->
+                <!-- <i class="icon icon-file-logo"></i> -->
+                <!-- <p class="mt-1">EHR</p> -->
                 <!-- </div> -->
                 <!-- <div class="dashboard-tabs purple"> -->
-                  <!-- <i class="icon icon-settings-rotate"></i> -->
-                  <!-- <p class="mt-1">Settings</p> -->
+                <!-- <i class="icon icon-settings-rotate"></i> -->
+                <!-- <p class="mt-1">Settings</p> -->
                 <!-- </div> -->
               </div>
             </div>
           </section>
           <!-- Dashboard Table -->
           <section class="form-section bg-white">
-            <div class="form-headings-wrapper d-flex align-items-center justify-content-between">
+            <div
+              class="form-headings-wrapper d-flex align-items-center justify-content-between"
+            >
               <!-- <a href="#" class="active">Prospect registration</a> -->
               <!-- <a href="#">Save Information</a> -->
               <!-- <a href="#">Schedule Interview</a> -->
@@ -150,15 +196,19 @@
               <!-- <a href="#">Cancel Interview</a> -->
               <!-- <a href="#">Reject</a> -->
               <!-- <a href="#">Apply</a> -->
-			  <h6>Prospect Registration</h6>
-			  <div class="cta_wrapper d-flex">
-                <button onclick="window.location.href = '../prospect_manager/prospect_manager.html'" class="success">Save Information</button>
+              <h6>Prospect Registration</h6>
+              <div class="cta_wrapper d-flex">
+                <button
+                  onclick="window.location.href = '../prospect_manager/prospect_manager.html'"
+                  class="success"
+                >
+                  Save Information
+                </button>
                 <button class="danger">Clear</button>
               </div>
             </div>
-			
+
             <form>
-			
               <h3 class="heading-bg">Personal Information</h3>
               <div class="form-wrapper">
                 <div class="field-wrapper">
@@ -204,18 +254,45 @@
                 </div>
                 <div class="field-wrapper">
                   <label for="mname">Gender :</label>
-                  <select class="select-control">
-                    <option>Gender</option>
-                    <option>Male</option>
-                    <option>Female</option>
-                  </select>
+                  <div class="select-wrapper position-relative">
+                    <div
+                      class="selected-option selected-option-gender select-control"
+                      onclick="genderToggleDropdown()"
+                    >
+                      Gender
+                    </div>
+                    <div class="option_list" id="genderDropdown">
+                      <a
+                        href="javascript:;"
+                        onclick="genderSelectOption('Male')"
+                        >Male</a
+                      >
+                      <a
+                        href="javascript:;"
+                        onclick="genderSelectOption('Female')"
+                        >Female</a
+                      >
+                    </div>
+                  </div>
                 </div>
                 <div class="field-wrapper">
                   <label for="mname">Languages :</label>
-                  <select class="select-control">
-                    <option>Languages</option>
-                    <option>English</option>
-                  </select>
+                  <div class="select-wrapper position-relative">
+                    <div
+                      class="selected-option selected-option-lang select-control"
+                      onclick="toggleDropdown()"
+                    >
+                      Languages
+                    </div>
+                    <div class="option_list" id="dropdownContent">
+                      <a href="javascript:;" onclick="selectOption('Languages')"
+                        >Languages</a
+                      >
+                      <a href="javascript:;" onclick="selectOption('English')"
+                        >English</a
+                      >
+                    </div>
+                  </div>
                 </div>
                 <div class="field-wrapper">
                   <label for="ssn">SSN :</label>
@@ -247,11 +324,26 @@
                 </div>
                 <div class="field-wrapper">
                   <label for="mname">Position :</label>
-                  <select class="select-control">
-                    <option>Position</option>
-                    <option>Admin</option>
-                    <option>Others</option>
-                  </select>
+                  <div class="select-wrapper position-relative">
+                    <div
+                      class="selected-option selected-option-position select-control"
+                      onclick="positionToggleDropdown()"
+                    >
+                      Position
+                    </div>
+                    <div class="option_list" id="positionDropdown">
+                      <a
+                        href="javascript:;"
+                        onclick="positionSelectOption('Position')"
+                        >Position</a
+                      >
+                      <a
+                        href="javascript:;"
+                        onclick="positionSelectOption('Admin')"
+                        >Admin</a
+                      >
+                    </div>
+                  </div>
                 </div>
                 <div class="field-wrapper">
                   <label for="tax_id">Tax id:</label>
@@ -654,7 +746,6 @@
                   ></textarea>
                 </div>
               </div>
-              
             </form>
           </section>
         </div>

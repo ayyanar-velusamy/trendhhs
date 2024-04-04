@@ -48,6 +48,7 @@ a:hover {
 }
 
 .select-control,
+.selected-option,
 textarea,
 input {
   color: #082777;
@@ -58,6 +59,7 @@ input {
 }
 
 select,
+.selected-option,
 input[type="text"],
 input[type="email"],
 input[type="number"],
@@ -82,6 +84,72 @@ input:active,
 input:focus {
   outline: none;
   border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.selected-option {
+  cursor: pointer;
+}
+
+.option_list {
+  display: none;
+  position: absolute;
+  background-color: #ddeafb;
+  width: 100%;
+  z-index: 1;
+  max-height: 100px;
+  overflow-y: scroll;
+  border-top: unset;
+  top: 52px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+  color: #0cd0a2;
+  background-color: #0cd0a2;
+  border-radius: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e5edf9;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0cd0a2;
+}
+
+.option_list a {
+  color: #082777 !important;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  /* border-radius: 10px; */
+  border-bottom: unset;
+}
+
+.option_list a:hover {
+  background-color: #0cd0a2;
+  color: white !important;
+}
+
+.dropdown:hover .option_list {
+  display: block;
 }
 
 button,
@@ -506,7 +574,6 @@ footer p {
 }
 /* Footer End */
 
-
 .header-profile-wrapper {
   padding-right: 50px;
 }
@@ -553,7 +620,8 @@ form .form-wrapper .field-wrapper input {
   max-width: 720px !important;
 }
 
-.modal-header, .modal-body {
+.modal-header,
+.modal-body {
   padding: 0 !important;
 }
 
@@ -562,32 +630,30 @@ form .form-wrapper .field-wrapper input {
   padding-bottom: 45px !important;
 }
 
-
 .modal-header .modal-title {
   font-size: 25px;
 }
 
 .modal-content {
-  background-color: #F7F9FC !important;
+  background-color: #f7f9fc !important;
   padding: 40px 100px;
 }
-
 
 .cta_wrapper {
   margin-top: 20px;
 }
 
 .cta_wrapper button {
-    padding: 16px;
-    box-shadow: unset;
-    width: 175px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 400;
-    border: 1px solid transparent;
-    margin-bottom: 10px;
-    margin-right: 10px;
+  padding: 16px;
+  box-shadow: unset;
+  width: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  border: 1px solid transparent;
+  margin-bottom: 10px;
+  margin-right: 10px;
 }
 
 .cta_wrapper button.success:hover {
@@ -606,4 +672,3 @@ form .form-wrapper .field-wrapper input {
   color: #fff;
   background-color: #ff0a38;
 }
-

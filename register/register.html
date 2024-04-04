@@ -25,6 +25,21 @@
     ></script>
   </head>
   <body>
+    <script>
+      function toggleDropdown() {
+        var dropdownContent = document.getElementById("dropdownContent");
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      }
+
+      function selectOption(option) {
+        document.querySelector(".selected-option").textContent = option;
+        document.getElementById("dropdownContent").style.display = "none";
+      }
+    </script>
     <div class="main">
       <section class="register-page-wrapper">
         <div class="container">
@@ -91,11 +106,16 @@
                 <input type="text" name="fname" placeholder="First Name" />
                 <input type="text" name="lname" placeholder="Last Name" />
                 <div class="select-wrapper position-relative">
-                  <select class="select-control">
-                    <option value="Position">Position</option>
-                    <option value="Admin">Admin</option>
-                    <option value="Others">Others</option>
-                  </select>
+                  <div
+                    class="selected-option select-control"
+                    onclick="toggleDropdown()"
+                  >
+                    Position
+                  </div>
+                  <div class="option_list" id="dropdownContent">
+                    <a href="#" onclick="selectOption('Admin')">Admin</a>
+                    <a href="#" onclick="selectOption('Others')">Others</a>
+                  </div>
                 </div>
                 <input type="text" name="email" placeholder="Email" />
                 <div class="password-wrapper position-relative">
