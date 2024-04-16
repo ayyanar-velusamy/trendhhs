@@ -224,7 +224,12 @@
                 </div>
                 <div class="add-staff-field d-flex align-items-center">
                   <i class="icon icon-plus"></i>
-                  <p>
+                  <p
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample"
+                    aria-controls="offcanvasExample"
+                  >
                     Add Staff Manager
                   </p>
                 </div>
@@ -707,8 +712,214 @@
           </section>
         </div>
       </div>
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-body">
+          <h5>Add new Staff</h5>
+          <form id="add_prospect_form" method="POST" action="">
+            <div class="form-wrapper">
+              <div class="field-wrapper">
+                <label for="fname"
+                  >First name<span class="mandate">*</span></label
+                >
+                <input
+                  type="text"
+                  id="fname"
+                  name="firstname"
+                  placeholder="First name"
+                  required
+                />
+              </div>
+              <div class="field-wrapper">
+                <label for="mname"
+                  >Middle name<span class="mandate">*</span></label
+                >
+                <input
+                  type="text"
+                  name="middlename"
+                  placeholder="Last name"
+                  required
+                />
+              </div>
+              <div class="field-wrapper">
+                <label for="lname"
+                  >Last name<span class="mandate">*</span></label
+                >
+                <input
+                  type="text"
+                  name="lastname"
+                  placeholder="Last name"
+                  required
+                />
+              </div>
+              <div class="field-wrapper">
+                <label for="fname">Date hired</label>
+                <div
+                  id="submit_date"
+                  class="date"
+                  data-date-format="mm/dd/yyyy"
+                >
+                  <input
+                    required
+                    type="text"
+                    name="submit_date"
+                    readonly
+                    placeholder="Date hired"
+                  />
+                  <span class="input-group-addon d-none">
+                    <i class="icon icon-eye"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field-wrapper">
+                <label for="fname">Birth date</label>
+                <div id="dob" class="date" data-date-format="dd/mm/yyyy">
+                  <input
+                    required
+                    type="text"
+                    name="dob"
+                    id="dob"
+                    readonly
+                    placeholder="DOB"
+                  />
+                  <span class="input-group-addon d-none">
+                    <i class="icon icon-eye"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field-wrapper">
+                <label for="ssn">SSN<span class="mandate">*</span></label>
+                <input
+                  type="text"
+                  id="ssn"
+                  name="ssn"
+                  placeholder="SSN"
+                  required
+                />
+              </div>
+              <div class="field-wrapper">
+                <label for="position"
+                  >Position :<span class="mandate">*</span></label
+                >
+                <select
+                  required
+                  class="select-control"
+                  name="position"
+                  required
+                >
+                  <option value="">Position</option>
+                  <option value="1">CNA – Certified Nursing Assistant</option>
+                  <option value="2">DON – Director of Nursing</option>
+                  <option value="3">HHA – Home Health Aide</option>
+                  <option value="4">Human Resource</option>
+                  <option value="5">LPN – Practical Registered Nurse</option>
+                  <option value="6">MSW – Medical Social Worker</option>
+                  <option value="7">OT – Occupational Therapist</option>
+                  <option value="8">
+                    OTA - Occupational Therapist Assistant
+                  </option>
+                  <option value="9">PT- Physical Therapist</option>
+                  <option value="10">PTA – Physical Therapist Assistant</option>
+                  <option value="11">RN- Registered Nurse</option>
+                </select>
+              </div>
+              <div class="field-wrapper">
+                <label for="organization"
+                  >Organization :<span class="mandate">*</span></label
+                >
+                <select
+                  required
+                  class="select-control"
+                  name="organization"
+                  required
+                >
+                  <option value="">Organization</option>
+                  <option value="">HHA Facility</option>
+                </select>
+              </div>
+              <div class="field-wrapper">
+                <label for="email">Email<span class="mandate">*</span></label>
+                <input
+                  type="email"
+                  id="lname"
+                  name="email"
+                  placeholder="Email id"
+                  required
+                />
+              </div>
+              <div class="field-wrapper">
+                <label for="language"
+                  >Preferred Language :<span class="mandate">*</span></label
+                >
+                <select
+                  required
+                  class="select-control"
+                  name="language"
+                  required
+                >
+                  <option value="">Preferred Language</option>
+                  <option value="">English</option>
+                </select>
+              </div>
+              <div class="field-wrapper">
+                <label for="status"
+                  >Status :<span class="mandate">*</span></label
+                >
+                <select required class="select-control" name="status" required>
+                  <option value="">Status</option>
+                  <option value="">Active</option>
+                </select>
+              </div>
 
-      
+              <div class="field-wrapper">
+                <label for="termination_date"
+                  >Termination Date :<span class="mandate">*</span></label
+                >
+                <select
+                  required
+                  class="select-control"
+                  name="termination_date"
+                  required
+                >
+                  <option value="">Pending</option>
+                  <option value="">Approved</option>
+                </select>
+              </div>
+              <div class="field-wrapper">
+                <label for="corporation_name"
+                  >Corporation Name:<span class="mandate">*</span></label
+                >
+                <select
+                  required
+                  class="select-control"
+                  name="corporation_name"
+                  required
+                >
+                  <option value="">Corporation Name</option>
+                </select>
+              </div>
+              <div class="field-wrapper">
+                <label for="tax_id">Tax id<span class="mandate">*</span></label>
+                <input
+                  type="text"
+                  id="tax_id"
+                  name="tax_id"
+                  placeholder="Tax id"
+                  required
+                />
+              </div>
+            </div>
+            <div class="cta_wrapper d-flex gap-5 mt-5">
+              <button class="danger" data-dismiss="modal">Clear</button>
+              <button class="success" id="add_prospect_btn">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
 
     <!--Main layout-->

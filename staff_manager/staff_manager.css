@@ -485,3 +485,16 @@ table tbody tr td input[type="text"] {
   font-weight: 500;
   margin-bottom: 8px;
 }
+
+.offcanvas.offcanvas-end {
+  width: 40%;
+}
+
+.offcanvas .offcanvas-body h5 {
+  margin-bottom: 32px;
+  font-size: 25px;
+}
+
+.offcanvas .offcanvas-body {
+  padding: 50px 100px;
+}
