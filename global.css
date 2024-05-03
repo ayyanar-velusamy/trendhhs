@@ -176,6 +176,26 @@ button:focus {
   border: none;
 }
 
+.defult-button {
+  background-color: #666666;
+  color: #f3f8ff;
+  font-size: 16px;
+  font-weight: 600;
+  height: 38px;
+  width: 100%;
+  min-width: 210px;
+  border-radius: 0px !important;
+  border: none;
+  transition: 0.4s ease-in-out all;
+  box-shadow: none;
+}
+
+.defult-button:hover,
+.defult-button.active {
+  background-color: #0cd0a2 !important;
+}
+
+
 .main {
   display: flex;
   flex-direction: column;
@@ -406,6 +426,12 @@ button:focus {
 
 .icon-tick-white {
   background-image: url("data:image/svg+xml,%0A%3Csvg width='17' height='13' viewBox='0 0 17 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.1 9.652L1.3 5.852L0 7.138L5.1 12.238L16.048 1.286L14.761 0L5.1 9.652Z' fill='white'/%3E%3C/svg%3E%0A");
+  width: 17px;
+  height: 13px;
+}
+
+.icon-tick-black {
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='17' height='13' viewBox='0 0 17 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.1 9.652L1.3 5.852L0 7.138L5.1 12.238L16.048 1.286L14.761 0L5.1 9.652Z' fill='black'/%3E%3C/svg%3E%0A");
   width: 17px;
   height: 13px;
 }

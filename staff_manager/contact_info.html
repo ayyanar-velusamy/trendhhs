@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./staff_manager.css" rel="stylesheet" />
+    <link href="../global.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="//cdn.datatables.net/2.0.5/css/dataTables.dataTables.min.css"
+    />
+  </head>
+  <body>
+    <script src="//cdn.datatables.net/2.0.5/js/dataTables.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#submit_date , #dob")
+          .datepicker({
+            autoclose: true,
+            todayHighlight: true,
+          })
+          .datepicker("update", new Date());
+      });
+      let table = new DataTable("#myTable");
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <main>
+      <div class="container-fluid">
+        <!-- Sidebar -->
+        <div class="sidebar-column">
+          <nav id="sidebarMenu" class="collapse d-block sidebar collapse">
+            <div class="sidebar-list">
+              <a href="#" class="" aria-current="true">
+                <i class="icon icon-logo"></i><span></span>
+              </a>
+              <a href="#" class="active" aria-current="true">
+                <i class="icon icon-staffs-logo"></i>
+                <p>Staff Manager</p>
+              </a>
+              <a
+                href="../prospect_manager/prospect_manager.html"
+                class=""
+                aria-current="true"
+              >
+                <i class="icon icon-prospects-logo"></i>
+                <p>Prospect Manager</p>
+              </a>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Dashboard layout -->
+        <div class="main-layout" style="background-color: #e5edf9">
+          <section class="dashboard-header-wrapper">
+            <div class="d-flex justify-content-end">
+              <div></div>
+              <div class="dashboard-header-section">
+                <input type="text" placeholder="Search" />
+                <a href="javascript:;"><i class="icon icon-search"></i></a>
+              </div>
+              <div
+                class="dashboard-header-activity-wrapper d-flex justify-content-center align-items-center"
+              >
+                <i class="icon icon-bell with-red"></i>
+                <i class="icon icon-message"></i>
+                <div
+                  class="header-profile-wrapper d-flex justify-content-between align-items-center"
+                >
+                  <img src="../images/user.png" />
+                  <p
+                    class="dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    George Rekblatt
+                    <i class="icon icon-arrow-down"></i>
+                  </p>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">View profile</a></li>
+                    <li>
+                      <a class="dropdown-item" href="../register/login.html"
+                        >Logout</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="dashboard-heading-section">
+            <div
+              class="d-block d-lg-flex justify-content-between align-items-center"
+            >
+              <div class="content">
+                <h1>Welcome to Trend Home Health Services Team</h1>
+                <p>We've Custom Healthcare HR Software Services</p>
+                <div class="top_ctas d-flex gap-4 mt-3">
+                  <button class="defult-button active">
+                    Contact Information
+                  </button>
+                  <button class="defult-button">Demo Graphics</button>
+                  <button class="defult-button">HR</button>
+                </div>
+              </div>
+              <div class="dashboard-tabs-wrapper d-flex justify-content-end">
+                <div class="dashboard-tabs">
+                  <i class="icon icon-teams"></i>
+                  <p class="mt-1">HR management</p>
+                </div>
+                <div class="dashboard-tabs green">
+                  <i class="icon icon-settings"></i>
+
+                  <p class="mt-1">System application</p>
+                </div>
+                <div class="dashboard-tabs yellow">
+                  <i class="icon icon-file-logo"></i>
+                  <p class="mt-1">EHR</p>
+                </div>
+                <div class="dashboard-tabs purple">
+                  <i class="icon icon-settings-rotate"></i>
+                  <p class="mt-1">Settings</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Dashboard Table -->
+          <section class="table-wrapper contact-info bg-white">
+            <div
+              class="table-heading-data mb-5 d-flex align-items-center justify-content-between"
+            >
+              <h5>Adamenko Nataliia (HHA) | Mobile : 786-966-8411</h5>
+            </div>
+            <div
+              class="table-heading-data d-flex align-items-center justify-content-between"
+            >
+              <h5>Emergency Contacts</h5>
+              <div
+                class="table-center-heading-data d-flex align-items-center justify-content-between"
+              >
+                <div class="add-staff-field d-flex align-items-center">
+                  <i class="icon icon-plus"></i>
+                  <p data-toggle="modal" data-target="#myModal">
+                    Add Emergency contacts
+                  </p>
+                </div>
+              </div>
+            </div>
+            <table class="w-100 contact-info" id="myTable">
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Relationship</td>
+                  <td>Address</td>
+                  <td>Phone</td>
+                  <td>Notes</td>
+                  <td>Action</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mykola</td>
+                  <td>Mother</td>
+                  <td>
+                    2801 NE 183RD
+                    <br />
+                    ST Apt 603, Aventura,
+                  </td>
+                  <td>786-966-8412</td>
+                  <td></td>
+                  <td class="">
+                    <!-- <i class="icon icon-eye-green"></i> -->
+                    <i class="icon icon-edit me-3"></i>
+                    <i class="icon icon-delete"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mykola</td>
+                  <td>Mother</td>
+                  <td>
+                    2801 NE 183RD
+                    <br />
+                    ST Apt 603, Aventura,
+                  </td>
+                  <td>786-966-8412</td>
+                  <td></td>
+                  <td class="">
+                    <!-- <i class="icon icon-eye-green"></i> -->
+                    <i class="icon icon-edit me-3"></i>
+                    <i class="icon icon-delete"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mykola</td>
+                  <td>Mother</td>
+                  <td>
+                    2801 NE 183RD
+                    <br />
+                    ST Apt 603, Aventura,
+                  </td>
+                  <td>786-966-8412</td>
+                  <td></td>
+                  <td class="">
+                    <!-- <i class="icon icon-eye-green"></i> -->
+                    <i class="icon icon-edit me-3"></i>
+                    <i class="icon icon-delete"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div
+              class="table-heading-data mt-3 d-flex align-items-center justify-content-between"
+            >
+              <h5>Address</h5>
+              <div
+                class="table-center-heading-data d-flex align-items-center justify-content-between"
+              >
+                <div class="add-staff-field d-flex align-items-center">
+                  <i class="icon icon-plus"></i>
+                  <p data-toggle="modal" data-target="#myModal">Add Address</p>
+                </div>
+              </div>
+            </div>
+            <table class="w-100 contact-info">
+              <thead>
+                <tr>
+                  <td>Default</td>
+                  <td>Address Type</td>
+                  <td>Address</td>
+                  <td>Action</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="icon icon-tick-black"></i></td>
+                  <td>Home Address</td>
+                  <td>2801 NE 183RD ST Apt 603, Aventura,</td>
+                  <td class="">
+                    <!-- <i class="icon icon-eye-green"></i> -->
+                    <i class="icon icon-edit me-3"></i>
+                    <i class="icon icon-delete"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div
+              class="table-heading-data mt-3 d-flex align-items-center justify-content-between"
+            >
+              <h5>Phone</h5>
+              <div
+                class="table-center-heading-data d-flex align-items-center justify-content-between"
+              >
+                <div class="add-staff-field d-flex align-items-center">
+                  <i class="icon icon-plus"></i>
+                  <p data-toggle="modal" data-target="#myModal">Add Phone</p>
+                </div>
+              </div>
+            </div>
+            <table class="w-100 contact-info">
+              <thead>
+                <tr>
+                  <td>Default</td>
+                  <td>Phone Type</td>
+                  <td>Number</td>
+                  <td>Action</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="icon icon-tick-black"></i></td>
+                  <td>Cell</td>
+                  <td>786-966-8412</td>
+                  <td class="">
+                    <!-- <i class="icon icon-eye-green"></i> -->
+                    <i class="icon icon-edit me-3"></i>
+                    <i class="icon icon-delete"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div
+              class="table-heading-data mt-3 d-flex align-items-center justify-content-between"
+            >
+              <h5>Email</h5>
+              <div
+                class="table-center-heading-data d-flex align-items-center justify-content-between"
+              >
+                <div class="add-staff-field d-flex align-items-center">
+                  <i class="icon icon-plus"></i>
+                  <p data-toggle="modal" data-target="#myModal">Add Email</p>
+                </div>
+              </div>
+            </div>
+            <table class="w-100 contact-info">
+              <thead>
+                <tr>
+                  <td>Default</td>
+                  <td>Email Type</td>
+                  <td>Email</td>
+                  <td>Action</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="icon icon-tick-black"></i></td>
+                  <td>Personal</td>
+                  <td>mykola@yahoo.com</td>
+                  <td class="">
+                    <!-- <i class="icon icon-eye-green"></i> -->
+                    <i class="icon icon-edit me-3"></i>
+                    <i class="icon icon-delete"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="myModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                Add Emergency Contacts
+              </h5>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-wrapper">
+                  <div class="field-wrapper">
+                    <label for="fname">Name</label>
+                    <input type="text" id="name" value="" placeholder="Name" />
+                  </div>
+                  <div class="field-wrapper">
+                    <label for="mname">Relationship</label>
+                    <input
+                      type="text"
+                      id="relationship"
+                      value=""
+                      placeholder="Relationship"
+                    />
+                  </div>
+                  <div class="field-wrapper">
+                    <label for="mname">Phone</label>
+                    <input
+                      type="text"
+                      id="phone"
+                      value=""
+                      placeholder="Phone"
+                    />
+                  </div>
+                  <div class="field-wrapper">
+                    <label for="mname">Notes</label>
+                    <textarea
+                      id="notes"
+                      value=""
+                      placeholder="Notes"
+                    ></textarea>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="cta_wrapper d-flex justify-content-center gap-5">
+              <button class="danger" data-toggle="modal" data-target="#myModal">
+                Clear
+              </button>
+              <button class="success">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--Main layout-->
+  </body>
+</html>
