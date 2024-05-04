@@ -517,3 +517,14 @@ table tbody tr td input[type="text"] {
 .offcanvas .offcanvas-body {
   padding: 50px 100px;
 }
+
+.userimage {
+  background-color: #B3C6ED;
+  padding: 5px 12px;
+  border-radius: 50%;
+  overflow: unset;
+}
+
+.userimage.male {
+  padding: 5px 10px;
+}
