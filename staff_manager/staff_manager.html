@@ -42,6 +42,9 @@
           })
           .datepicker("update", new Date());
       });
+      function thisFileUpload() {
+        document.getElementById("signedby").click();
+      }
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
@@ -334,7 +337,8 @@
                     </div>
                   </td>
                   <td class="d-flex align-items-center" style="gap: 7px">
-                   <img class="userimage" src="../images/female.svg" />Adamenko Natalia
+                    <img class="userimage" src="../images/female.svg" />Adamenko
+                    Natalia
                   </td>
                   <td>(786)-966-8411</td>
                   <td>07/31/2023</td>
@@ -368,7 +372,8 @@
                     </div>
                   </td>
                   <td class="d-flex align-items-center" style="gap: 7px">
-                    <img class="userimage" src="../images/female.svg" />Adamenko Natalia
+                    <img class="userimage" src="../images/female.svg" />Adamenko
+                    Natalia
                   </td>
                   <td>(786)-966-8411</td>
                   <td>07/31/2023</td>
@@ -402,7 +407,10 @@
                     </div>
                   </td>
                   <td class="d-flex align-items-center" style="gap: 7px">
-                    <img class="userimage male" src="../images/male.svg" />Adamenko Natalia
+                    <img
+                      class="userimage male"
+                      src="../images/male.svg"
+                    />Adamenko Natalia
                   </td>
                   <td>(786)-966-8411</td>
                   <td>07/31/2023</td>
@@ -436,7 +444,10 @@
                     </div>
                   </td>
                   <td class="d-flex align-items-center" style="gap: 7px">
-                    <img class="userimage male" src="../images/male.svg" />Adamenko Natalia
+                    <img
+                      class="userimage male"
+                      src="../images/male.svg"
+                    />Adamenko Natalia
                   </td>
                   <td>(786)-966-8411</td>
                   <td>07/31/2023</td>
@@ -470,7 +481,8 @@
                     </div>
                   </td>
                   <td class="d-flex align-items-center" style="gap: 7px">
-                    <img class="userimage" src="../images/female.svg" />Adamenko Natalia
+                    <img class="userimage" src="../images/female.svg" />Adamenko
+                    Natalia
                   </td>
                   <td>(786)-966-8411</td>
                   <td>07/31/2023</td>
@@ -504,7 +516,8 @@
                     </div>
                   </td>
                   <td class="d-flex align-items-center" style="gap: 7px">
-                    <img class="userimage" src="../images/female.svg" />Adamenko Natalia
+                    <img class="userimage" src="../images/female.svg" />Adamenko
+                    Natalia
                   </td>
                   <td>(786)-966-8411</td>
                   <td>07/31/2023</td>
@@ -538,7 +551,10 @@
                     </div>
                   </td>
                   <td class="d-flex align-items-center" style="gap: 7px">
-                    <img class="userimage male" src="../images/male.svg" />Adamenko Natalia
+                    <img
+                      class="userimage male"
+                      src="../images/male.svg"
+                    />Adamenko Natalia
                   </td>
                   <td>(786)-966-8411</td>
                   <td>07/31/2023</td>
@@ -572,7 +588,8 @@
                     </div>
                   </td>
                   <td class="d-flex align-items-center" style="gap: 7px">
-                    <img class="userimage" src="../images/female.svg" />Adamenko Natalia
+                    <img class="userimage" src="../images/female.svg" />Adamenko
+                    Natalia
                   </td>
                   <td>(786)-966-8411</td>
                   <td>07/31/2023</td>
@@ -606,7 +623,10 @@
                     </div>
                   </td>
                   <td class="d-flex align-items-center" style="gap: 7px">
-                    <img class="userimage male" src="../images/male.svg" />Adamenko Natalia
+                    <img
+                      class="userimage male"
+                      src="../images/male.svg"
+                    />Adamenko Natalia
                   </td>
                   <td>(786)-966-8411</td>
                   <td>07/31/2023</td>
@@ -640,7 +660,8 @@
                     </div>
                   </td>
                   <td class="d-flex align-items-center" style="gap: 7px">
-                    <img class="userimage" src="../images/female.svg" />Adamenko Natalia
+                    <img class="userimage" src="../images/female.svg" />Adamenko
+                    Natalia
                   </td>
                   <td>(786)-966-8411</td>
                   <td>07/31/2023</td>
@@ -911,6 +932,35 @@
                   placeholder="Tax id"
                   required
                 />
+              </div>
+              <div class="field-wrapper">
+                <label for="signedby"
+                  >Signed by<span class="mandate">*</span></label
+                >
+                <div class="d-flex gap-4">
+                  <input
+                    type="file"
+                    id="signedby"
+                    style="
+                      flex: 0.4;
+                      padding: 0;
+                      border: unset;
+                      align-items: center;
+                      display: flex;
+                      margin-top: 15px;
+                      display: inline-block;
+                    "
+                  />
+                  <button
+                    id="button"
+                    name="button"
+                    value="Upload"
+                    onclick="thisFileUpload();"
+                    style="background-color: #606060; flex: 0.6"
+                  >
+                    Upload your e signature
+                  </button>
+                </div>
               </div>
             </div>
             <div class="cta_wrapper d-flex gap-5 mt-5">

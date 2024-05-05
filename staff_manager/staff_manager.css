@@ -528,3 +528,11 @@ table tbody tr td input[type="text"] {
 .userimage.male {
   padding: 5px 10px;
 }
+
+::file-selector-button {
+  display: none;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  display: none;
+}
