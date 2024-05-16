@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./hrdetails.css" rel="stylesheet" />
+    <link href="../staff_manager/staff_manager.css" rel="stylesheet" />
+    <link href="../global.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script.js"></script>
+  </head>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function toggleAllAccordions() {
+        var accordionHeaders = document.querySelectorAll(
+          ".accordion-header button"
+        );
+        var accordionCollapses = document.querySelectorAll(
+          ".accordion-collapse"
+        );
+
+        var isCollapsed = Array.from(accordionHeaders).some(function (header) {
+          return !header.classList.contains("collapsed");
+        });
+
+        if (isCollapsed) {
+          accordionHeaders.forEach(function (header) {
+            header.classList.add("collapsed");
+          });
+          accordionCollapses.forEach(function (collapse) {
+            collapse.classList.remove("show");
+          });
+        } else {
+          accordionHeaders.forEach(function (header) {
+            header.classList.remove("collapsed");
+          });
+          accordionCollapses.forEach(function (collapse) {
+            collapse.classList.add("show");
+          });
+        }
+      }
+    </script>
+    <main>
+      <div class="container-fluid">
+        <!-- Sidebar -->
+        <div class="sidebar-column">
+          <nav id="sidebarMenu" class="collapse d-block sidebar collapse">
+            <div class="sidebar-list">
+              <a href="#" class="" aria-current="true">
+                <i class="icon icon-logo"></i><span></span>
+              </a>
+              <a href="#" class="active" aria-current="true">
+                <i class="icon icon-staffs-logo"></i>
+                <p>Staff Manager</p>
+              </a>
+              <a
+                href="../prospect_manager/prospect_manager.html"
+                class=""
+                aria-current="true"
+              >
+                <i class="icon icon-prospects-logo"></i>
+                <p>Prospect Manager</p>
+              </a>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Dashboard layout -->
+        <div class="main-layout" style="background-color: #e5edf9">
+          <section class="dashboard-header-wrapper">
+            <div class="d-flex justify-content-end">
+              <div></div>
+              <div class="dashboard-header-section">
+                <input type="text" placeholder="Search" />
+                <a href="javascript:;"><i class="icon icon-search"></i></a>
+              </div>
+              <div
+                class="dashboard-header-activity-wrapper d-flex justify-content-center align-items-center"
+              >
+                <i class="icon icon-bell with-red"></i>
+                <i class="icon icon-message"></i>
+                <div
+                  class="header-profile-wrapper d-flex justify-content-between align-items-center"
+                >
+                  <img src="../images/user.png" />
+                  <p
+                    class="dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    George Rekblatt
+                    <i class="icon icon-arrow-down"></i>
+                  </p>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">View profile</a></li>
+                    <li>
+                      <a class="dropdown-item" href="../register/login.html"
+                        >Logout</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="dashboard-heading-section">
+            <div
+              class="d-block d-lg-flex justify-content-between align-items-center"
+            >
+              <div class="content">
+                <h1>Welcome to Trend Home Health Services Team</h1>
+                <p>We've Custom Healthcare HR Software Services</p>
+                <div class="top_ctas d-flex gap-4 mt-3">
+                  <button class="defult-button">Contact Information</button>
+                  <button class="defult-button">Demo Graphics</button>
+                  <button class="defult-button active">HR</button>
+                </div>
+              </div>
+              <div class="dashboard-tabs-wrapper d-flex justify-content-end">
+                <div class="dashboard-tabs">
+                  <i class="icon icon-teams"></i>
+                  <p class="mt-1">HR management</p>
+                </div>
+                <div class="dashboard-tabs green">
+                  <i class="icon icon-settings"></i>
+
+                  <p class="mt-1">System application</p>
+                </div>
+                <div class="dashboard-tabs yellow">
+                  <i class="icon icon-file-logo"></i>
+                  <p class="mt-1">EHR</p>
+                </div>
+                <div class="dashboard-tabs purple">
+                  <i class="icon icon-settings-rotate"></i>
+                  <p class="mt-1">Settings</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Dashboard Table -->
+          <div class="hrdetail-wrapper m-3 bg-white overflow-scroll">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="hrdetail-header">
+                  <div class="cta_section d-flex justify-content-between">
+                    <button class="button">
+                      <i class="icon icon-send-email me-3"></i>Send Reminder
+                      Email
+                    </button>
+                    <div>
+                      <span class="me-3">Generated :</span>
+                      <button class="button" onclick="toggleAllAccordions()">
+                        Groups
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="checkbox-list d-flex justify-content-between mt-5"
+                  >
+                    <div class="field-wrapper d-flex align-items-center">
+                      <label
+                        class="form-check-label me-2"
+                        for="flexCheckDefault"
+                      >
+                        Show Expired:
+                      </label>
+                      <input
+                        class="form-check-input mt-0"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                      />
+                    </div>
+                    <div class="field-wrapper d-flex align-items-center">
+                      <label
+                        class="form-check-label me-2"
+                        for="flexCheckDefault"
+                      >
+                        Show Archive:
+                      </label>
+                      <input
+                        class="form-check-input mt-0"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                      />
+                    </div>
+                    <div class="field-wrapper d-flex align-items-center">
+                      <label
+                        class="form-check-label me-2"
+                        for="flexCheckDefault"
+                      >
+                        <i class="icon icon-scan me-2"></i>
+                        Print All:
+                      </label>
+                      <input
+                        class="form-check-input mt-0"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <!-- Table list -->
+                  <table class="hrdetail-table w-100">
+                    <thead class="w-100">
+                      <th class="th d-flex justify-content-start">Form Name</th>
+                      <th class="sm-th">Req.</th>
+                      <th class="sm-th">Issue Date</th>
+                      <th class="sm-th">Exp. Date</th>
+                      <th style="visibility: hidden">
+                        <i class="icon icon-edit"></i>
+                        <i class="icon icon-delete"></i>
+                      </th>
+                    </thead>
+                  </table>
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="false"
+                        >
+                          Category: Certificates (9)
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingTwo"
+                      >
+                        <div class="accordion-body">
+                          <table class="w-100">
+                            <tbody class="w-100">
+                              <tr>
+                                <td class="th d-flex justify-content-start">
+                                  75 Hours HHA certificate
+                                </td>
+                                <td class="sm-th">Y</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="">
+                                  <i class="icon icon-edit"></i>
+                                  <i class="icon icon-delete"></i>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="th d-flex justify-content-start">
+                                  75 Hours HHA certificate
+                                </td>
+                                <td class="sm-th">Y</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="">
+                                  <i class="icon icon-edit"></i>
+                                  <i class="icon icon-delete"></i>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="th d-flex justify-content-start">
+                                  75 Hours HHA certificate
+                                </td>
+                                <td class="sm-th">Y</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="">
+                                  <i class="icon icon-edit"></i>
+                                  <i class="icon icon-delete"></i>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseTwo"
+                          aria-expanded="false"
+                          aria-controls="collapseTwo"
+                        >
+                          Category: Competencies (6)
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseTwo"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <table class="w-100">
+                            <tbody class="w-100">
+                              <tr>
+                                <td class="th d-flex justify-content-start">
+                                  75 Hours HHA certificate
+                                </td>
+                                <td class="sm-th">Y</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="">
+                                  <i class="icon icon-edit"></i>
+                                  <i class="icon icon-delete"></i>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="th d-flex justify-content-start">
+                                  75 Hours HHA certificate
+                                </td>
+                                <td class="sm-th">Y</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="">
+                                  <i class="icon icon-edit"></i>
+                                  <i class="icon icon-delete"></i>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingThree">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseThree"
+                          aria-expanded="false"
+                          aria-controls="collapseThree"
+                        >
+                          Category: General HR (26)
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseThree"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <table class="w-100">
+                            <tbody class="w-100">
+                              <tr>
+                                <td class="th d-flex justify-content-start">
+                                  75 Hours HHA certificate
+                                </td>
+                                <td class="sm-th">Y</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="">
+                                  <i class="icon icon-edit"></i>
+                                  <i class="icon icon-delete"></i>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="th d-flex justify-content-start">
+                                  75 Hours HHA certificate
+                                </td>
+                                <td class="sm-th">Y</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="">
+                                  <i class="icon icon-edit"></i>
+                                  <i class="icon icon-delete"></i>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingFour">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseFour"
+                          aria-expanded="false"
+                          aria-controls="collapseFour"
+                        >
+                          Category: Health (Confidential Info) (6)
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseFour"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingFour"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <table class="w-100">
+                            <tbody class="w-100">
+                              <tr>
+                                <td class="th d-flex justify-content-start">
+                                  75 Hours HHA certificate
+                                </td>
+                                <td class="sm-th">Y</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="">
+                                  <i class="icon icon-edit"></i>
+                                  <i class="icon icon-delete"></i>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="th d-flex justify-content-start">
+                                  75 Hours HHA certificate
+                                </td>
+                                <td class="sm-th">Y</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="">
+                                  <i class="icon icon-edit"></i>
+                                  <i class="icon icon-delete"></i>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingFive">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseFive"
+                          aria-expanded="false"
+                          aria-controls="collapseFive"
+                        >
+                          Category: Miscellaneous (1)
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseFive"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingFive"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <table class="w-100">
+                            <tbody class="w-100">
+                              <tr>
+                                <td class="th d-flex justify-content-start">
+                                  75 Hours HHA certificate
+                                </td>
+                                <td class="sm-th">Y</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="">
+                                  <i class="icon icon-edit"></i>
+                                  <i class="icon icon-delete"></i>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="th d-flex justify-content-start">
+                                  75 Hours HHA certificate
+                                </td>
+                                <td class="sm-th">Y</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="sm-th">03/07/2023</td>
+                                <td class="">
+                                  <i class="icon icon-edit"></i>
+                                  <i class="icon icon-delete"></i>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Table list -->
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="attachment-wrapper">
+                  <div class="d-flex justify-content-between">
+                    <h3>Attachments</h3>
+                    <div class="right-side d-flex align-items-center">
+                      <div class="field-wrapper d-flex align-items-center me-5">
+                        <label
+                          class="form-check-label me-2"
+                          for="flexCheckDefault"
+                        >
+                          Show deleted files:
+                        </label>
+                        <input
+                          class="form-check-input mt-0"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckDefault"
+                        />
+                      </div>
+                      <button class="btn-with-text">
+                        <i class="icon icon-scan me-2"></i> Print All:
+                      </button>
+                    </div>
+                  </div>
+                  <div class="mt-3 cta-wrapper d-flex justify-content-between">
+                    <div>
+                      <button class="sm-button me-3">Download</button>
+                      <button class="sm-button">Upload</button>
+                    </div>
+                    <div>
+                      <button class="sm-button primary me-3">Scan forms</button>
+                      <button class="sm-button danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="pdf-view-wrapper"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--Main layout-->
+  </body>
+</html>
