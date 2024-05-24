@@ -48,17 +48,21 @@ input[type="checkbox"] {
   border-color: #0d6efd;
 }
 
-.hrdetail-table {
+.hrdetail-table th {
   margin-top: 0px !important;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
+  padding: 16px 20px;
+  /* display: flex;
+  justify-content: space-between; */
+}
+
+.hrdetail-table td {
+  padding: 7px 20px !important;
 }
 
 .hrdetail-table tr {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
 }
 
 .hrdetail-table .th {
@@ -71,6 +75,11 @@ input[type="checkbox"] {
 
 .accordion > * + * {
   margin-top: 24px;
+}
+
+.accordion .accordion-body {
+  padding-left: 0;
+  padding-right: 0;
 }
 .accordion-item:first-of-type {
   border-radius: 0px !important;
@@ -101,3 +110,12 @@ table tbody tr td {
   color: #5e63f2 !important;
   font-size: 20px !important;
 }
+
+.deleted-files-wrapper {
+  max-height: 225px;
+  overflow-x: scroll;
+}
+/* 
+.deleted-files-wrapper {
+  display: none;
+} */
